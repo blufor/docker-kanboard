@@ -21,7 +21,7 @@ define('GITLAB_CLIENT_SECRET', '${GITLAB_OAUTH_SECRET}');
 define('GITLAB_OAUTH_AUTHORIZE_URL', '${GITLAB_OAUTH_ENDPOINT}/oauth/authorize');
 define('GITLAB_OAUTH_TOKEN_URL', '${GITLAB_OAUTH_ENDPOINT}/oauth/token');
 define('GITLAB_API_URL', '${GITLAB_OAUTH_ENDPOINT}/api/v3/');
-define('HIDE_LOGIN_FORM', true);
+define('HIDE_LOGIN_FORM', false);
 ?>" > /var/www/html/config.php
 
 chown www-data:www-data /var/www/html/config.php
