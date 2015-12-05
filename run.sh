@@ -9,10 +9,10 @@ define('MAIL_TRANSPORT', 'smtp');
 define('MAIL_SMTP_HOSTNAME', '${SMTP_HOST}');
 define('MAIL_SMTP_PORT', ${SMTP_PORT});
 define('DB_DRIVER', 'postgres');
-define('DB_USERNAME', '${POSTGRES_USER}');
-define('DB_PASSWORD', '${POSTGRES_PASSWORD}');
+define('DB_USERNAME', '${POSTGRES_ENV_POSTGRES_USER}');
+define('DB_PASSWORD', '${POSTGRES_ENV_POSTGRES_PASSWORD}');
 define('DB_HOSTNAME', '${POSTGRES_PORT_5432_TCP_ADDR}');
-define('DB_NAME', '${POSTGRES_USER}');
+define('DB_NAME', '${POSTGRES_ENV_POSTGRES_USER}');
 define('DB_PORT', ${POSTGRES_PORT_5432_TCP_PORT});
 define('GITLAB_AUTH', true);
 define('GITLAB_CLIENT_ID', '${GITLAB_OAUTH_ID}');
@@ -24,4 +24,4 @@ define('HIDE_LOGIN_FORM', false);" > $cfgpath
 
 chown www-data:www-data $cfgpath
 
-/usr/sbin/apache2ctl -D FOREGROUND
+exec /usr/sbin/apache2ctl -D FOREGROUND
